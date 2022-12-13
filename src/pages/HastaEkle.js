@@ -40,7 +40,7 @@ const HastaEkle = (props) => {
       }
 
       const newIslem = {
-         id: String(new Date().getTime()),
+         id: String(new Date().getTime() + 1),
          sikayet: sikayet,
          uygulananTedavi: "",
          yazilanIlaclar: [],

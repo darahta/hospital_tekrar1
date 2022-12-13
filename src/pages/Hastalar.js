@@ -16,6 +16,7 @@ const Hastalar = () => {
    const navigate = useNavigate();
    const [hastalar, setHastalar] = useState(null);
    const [updateComponent, setUpdateComponent] = useState(false);
+   const [randevular, setRandevular] = useState(null);
 
    useEffect(() => {
       axios
@@ -24,10 +25,20 @@ const Hastalar = () => {
             setHastalar(res.data);
          })
          .catch((err) => console.log("hastalar error", err));
+      axios
+         .get("http://localhost:3004/randevular")
+         .then((res) => {
+            setRandevular(res.data);
+         })
+         .catch((err) => console.log("err", err));
    }, [updateComponent]);
 
    const handleDeleteHasta = (hasta) => {
       console.log("hastaId", hasta);
+      const filteredRandevular = randevular.filter(
+         (item) => item.hastaId === hasta.id
+      );
+      console.log("filteredrandevular", filteredRandevular);
 
       axios
          .delete(`http://localhost:3004/hastalar/${hasta.id}`)
@@ -39,11 +50,17 @@ const Hastalar = () => {
                   .catch((err) => console.log("err", err));
             });
             setUpdateComponent(!updateComponent);
+            filteredRandevular.map((item) => {
+               axios
+                  .delete(`http://localhost:3004/randevular/${item.id}`)
+                  .then((res) => {})
+                  .catch((err) => console.log("err", err));
+            });
          })
          .catch((err) => console.log("err", err));
    };
 
-   if (hastalar === null) {
+   if (hastalar === null || randevular === null) {
       return <h1>Loading...</h1>;
    }
 

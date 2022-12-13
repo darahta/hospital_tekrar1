@@ -16,7 +16,7 @@ const Header = (props) => {
                </Typography>
                <div style={{ display: "flex", gap: "20px" }}>
                   <Link className="menuLink" to="/">
-                     Randevular
+                     Anasayfa
                   </Link>
                   <Link className="menuLink" to="/hastalar">
                      Hastalar
