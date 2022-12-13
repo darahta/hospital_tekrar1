@@ -1,0 +1,43 @@
+{
+  "randevular": [
+    {
+      "id": "1",
+      "date": "17.09.2022",
+      "hastaId": "1"
+    }
+  ],
+  "hastalar": [
+    {
+      "id": "1670856344907",
+      "name": "deneme",
+      "surname": "deneme",
+      "phone": "05555555555",
+      "islemIds": [
+        "1670856344538"
+      ]
+    },
+    {
+      "id": "1670856364715",
+      "name": "deneme1",
+      "surname": "deneme1",
+      "phone": "05555555551",
+      "islemIds": [
+        "1670856364676"
+      ]
+    }
+  ],
+  "islemler": [
+    {
+      "id": "1670856344538",
+      "sikayet": "grip",
+      "uygulananTedavi": "",
+      "yazilanIlaclar": []
+    },
+    {
+      "id": "1670856364676",
+      "sikayet": "soğuk algınlığı",
+      "uygulananTedavi": "",
+      "yazilanIlaclar": []
+    }
+  ]
+}
