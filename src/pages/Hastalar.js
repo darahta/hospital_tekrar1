@@ -11,12 +11,19 @@ import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { useNavigate } from "react-router-dom";
+import EditHastaModal from "../components/EditHastaModal";
 
 const Hastalar = () => {
    const navigate = useNavigate();
    const [hastalar, setHastalar] = useState(null);
    const [updateComponent, setUpdateComponent] = useState(false);
    const [randevular, setRandevular] = useState(null);
+   const [openEditModal, setOpenEditModal] = useState(false);
+   const [selectedHasta, setSelectedHasta] = useState(null);
+
+   const handleClose = () => {
+      setOpenEditModal(false);
+   };
 
    useEffect(() => {
       axios
@@ -120,7 +127,14 @@ const Hastalar = () => {
                                     justifyContent: "center",
                                  }}
                               >
-                                 <Button variant="outlined" color="secondary">
+                                 <Button
+                                    onClick={() => {
+                                       setOpenEditModal(true);
+                                       setSelectedHasta(hasta);
+                                    }}
+                                    variant="outlined"
+                                    color="secondary"
+                                 >
                                     Düzenle
                                  </Button>
                                  <Button
@@ -141,6 +155,11 @@ const Hastalar = () => {
                </TableBody>
             </Table>
          </TableContainer>
+         <EditHastaModal
+            hasta={selectedHasta}
+            open={openEditModal}
+            handleClose={handleClose}
+         />
       </div>
    );
 };

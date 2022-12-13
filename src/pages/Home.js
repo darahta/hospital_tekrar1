@@ -75,7 +75,7 @@ const Home = () => {
                            }}
                         >
                            <TableCell component="th" scope="row">
-                              {randevu.date}
+                              {new Date(randevu.date).toLocaleString()}
                            </TableCell>
                            <TableCell align="right">
                               {aradigimHasta.name}
