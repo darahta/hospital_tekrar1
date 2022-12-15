@@ -9,11 +9,6 @@
       "id": "1670933666305",
       "date": "2022-12-17T18:17",
       "hastaId": "1670933650938"
-    },
-    {
-      "id": "1670933693217",
-      "date": "2022-12-10T18:16",
-      "hastaId": "1670933693216"
     }
   ],
   "hastalar": [
@@ -28,12 +23,12 @@
       ]
     },
     {
-      "id": "1670933693216",
-      "name": "niğde",
-      "surname": "aydın",
-      "phone": "05555555551",
+      "id": "1670964525237",
+      "name": "fdsfa",
+      "surname": "süm",
+      "phone": "05655555555",
       "islemIds": [
-        "1670933693215"
+        "1670964525161"
       ]
     }
   ],
@@ -51,10 +46,13 @@
       "yazilanIlaclar": []
     },
     {
-      "id": "1670933693215",
-      "sikayet": "baybas",
-      "uygulananTedavi": "",
-      "yazilanIlaclar": []
+      "id": "1670964525161",
+      "sikayet": "girfd",
+      "uygulananTedavi": "deneme",
+      "yazilanIlaclar": [
+        "aspirin",
+        "grip"
+      ]
     }
   ]
 }

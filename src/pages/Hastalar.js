@@ -144,7 +144,13 @@ const Hastalar = () => {
                                  >
                                     Sil
                                  </Button>
-                                 <Button variant="outlined" color="error">
+                                 <Button
+                                    variant="outlined"
+                                    color="error"
+                                    onClick={() =>
+                                       navigate(`/hasta-detay/${hasta.id}`)
+                                    }
+                                 >
                                     Detaylar
                                  </Button>
                               </Stack>
@@ -156,6 +162,9 @@ const Hastalar = () => {
             </Table>
          </TableContainer>
          <EditHastaModal
+            setUpdateComponent={setUpdateComponent}
+            updateComponent={updateComponent}
+            hastalar={hastalar}
             hasta={selectedHasta}
             open={openEditModal}
             handleClose={handleClose}
